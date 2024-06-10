@@ -1,0 +1,24 @@
+import IF as IF
+import postgres as postgres
+import public as public
+
+-- Table: public.courses
+
+-- DROP TABLE IF EXISTS public.courses;
+
+CREATE TABLE IF NOT EXISTS public.courses
+(
+    course_name character varying COLLATE pg_catalog."default",
+    course_fee integer,
+    is_part_time boolean,
+    is_full_time boolean,
+    no_of_weeks integer,
+    is_online boolean,
+    is_inperson boolean,
+    CONSTRAINT courses_course_name_key UNIQUE (course_name)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.courses
+    OWNER to postgres;
